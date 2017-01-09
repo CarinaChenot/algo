@@ -1,3 +1,17 @@
+.playmat {
+    position: relative;
+    height: 375px;
+    width: 375px;
+}
+.dice {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: red;
+    width: 75px;
+    height: 75px;
+    border: solid 1px black;
+}
 .x1 {
     margin-left: 75px
 }
