@@ -12,7 +12,7 @@ lancer.addEventListener('click', function() {
             tempX = Math.round(Math.random() * 4 + 1); /* Tirer une position x et y aléatoire */
             tempY = Math.round(Math.random() * 4 + 1);
             verification(posX, posY, tempX, tempY); /* Vérifier si elle n'est pas déjà prise */
-        } while (!verification)
+        } while (!verification);
 
         if (verification) { /* Si elle n'est pas déjà prise on ajoute la nouvelle position au tableau */
             posX.push(tempX);
@@ -23,9 +23,11 @@ lancer.addEventListener('click', function() {
 });
 
 /* Vérifier si la position n'est pas déjà prise */
+
 function verification(posX, posY, tempX, tempY) {
-    for (var i = 0; i < 5; i++) {
+    for (var i = 0; i < posX.length-1; i++) {
         if (posX[i] == tempX && posY[i] == tempY) {
+            console.log('faux')
             return false;
         }
     }
