@@ -7,12 +7,13 @@ lancer.addEventListener('click', function() {
     var posY = [];
     var tempX;
     var tempY;
+    var ok = false;
     for (var i = 0; i < 5; i++) {
         do {
             tempX = Math.round(Math.random() * 4 + 1); /* Tirer une position x et y aléatoire */
             tempY = Math.round(Math.random() * 4 + 1);
-            verification(posX, posY, tempX, tempY); /* Vérifier si elle n'est pas déjà prise */
-        } while (!verification);
+            ok = verification(posX, posY, tempX, tempY); /* Vérifier si elle n'est pas déjà prise */
+        } while (!ok);
 
         if (verification) { /* Si elle n'est pas déjà prise on ajoute la nouvelle position au tableau */
             posX.push(tempX);
@@ -25,9 +26,8 @@ lancer.addEventListener('click', function() {
 /* Vérifier si la position n'est pas déjà prise */
 
 function verification(posX, posY, tempX, tempY) {
-    for (var i = 0; i < posX.length-1; i++) {
+    for (var i = 0; i <= posX.length-1; i++) {
         if (posX[i] == tempX && posY[i] == tempY) {
-            console.log('faux')
             return false;
         }
     }
@@ -40,3 +40,5 @@ function giveClasses(dices, posX, posY) {
         dices[i].className = "dice " + "x" + posX[i] + " y" + posY[i];
     }
 }
+
+/* Au clic sur les dés ça affecte les classes h0, h1, h2, h3, h4 */

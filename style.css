@@ -14,6 +14,8 @@
     transition: 1s;
 }
 
+/* X */
+
 .x1 {
     margin-left: 75px
 }
@@ -30,6 +32,8 @@
     margin-left: 375px
 }
 
+/* Y */
+
 .y1 {
     margin-top: 75px
 }
@@ -44,4 +48,22 @@
 }
 .y5 {
     margin-top: 375px
+}
+
+/* H */
+
+.h0 {
+    margin: 60px 0 0 75px;
+}
+.h1 {
+    margin: 60px 0 0 150px;
+}
+.h2 {
+    margin: 60px 0 0 225px;
+}
+.h3 {
+    margin: 60px 0 0 300px;
+}
+.h4 {
+    margin: 60px 0 0 375px;
 }
