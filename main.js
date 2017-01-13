@@ -37,6 +37,8 @@ function verification(posX, posY, tempX, tempY) {
 /* Attribuer les classes en fonction de la position */
 function giveClasses(dices, posX, posY) {
     for (var i = 0; i < 5; i++) {
+        var deg = Math.floor(Math.random() * 360);
+        dices[i].style.transform = 'rotate('+ deg +'deg)'; // Rotation des dés
         dices[i].className = "dice " + "x" + posX[i] + " y" + posY[i];
     }
 }
