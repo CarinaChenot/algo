@@ -12,6 +12,9 @@
     height: 75px;
     border: solid 1px black;
     transition: 1s;
+    line-height: 75px;
+    text-align: center;
+    font-size: 20px;
 }
 
 /* X */
