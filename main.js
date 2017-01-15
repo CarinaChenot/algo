@@ -1,6 +1,7 @@
 var lancer = document.querySelector('button');
 var dices = document.getElementsByClassName('dice');
 var rank = 0;
+var sorted = true
 
 /* Lancer les dés au clic */
 lancer.addEventListener('click', function() {
@@ -9,7 +10,6 @@ lancer.addEventListener('click', function() {
     var tempX;
     var tempY;
     var ok = false;
-    rank = 0;
     for(var i = 0; i<5; i++){           //on enlève la classe de tri pour pouvoir trier si on relance sans recharger la page
         dices[i].classList.remove()
     }
@@ -28,7 +28,8 @@ lancer.addEventListener('click', function() {
     }
     giveClasses(dices, posX, posY); /* On attribue les classes en fonction des positions */
     addNumber(dices);
-    shorting(dices);
+    sorting(dices, rank);
+    unSorting(dices, rank);
 });
 
 /* Vérifier si la position n'est pas déjà prise */
@@ -55,18 +56,31 @@ function giveClasses(dices, posX, posY) {
 function addNumber(dices){
     for (var i = 0; i<5; i++){
         var number = Math.floor(Math.random() * 5 + 1);
-        console.log(number)
         dices[i].innerHTML = number;
     }
 }
 /* Au clic sur les dés ça affecte les classes h0, h1, h2, h3, h4 */
 
-function shorting(dices) {
+function sorting(dices, rank) {
     for (var j=0; j<5; j++){
         dices[j].addEventListener('click', function(){
-            this.style.transform = 'rotate(0)';
-            this.classList.add('h'+ rank);
+          if (sorted){
+            this.style.transform = 'rotate(0)'; //rotation pour avoir le dé de face
+            this.classList.add('h'+ rank); //on lui ajoute le h de 0 à 5
             rank++;
+          }
         });
     }
 }
+
+/*au clic les dés reviennent à leur position */
+ function unSorting(dices, rank){
+    for (var j=0; j<5; j++){
+        dices[j].addEventListener('click', function(){
+          if (!sorted){
+            this.classList.remove('h'+ rank); //on lui ajoute le h de 0 à 5
+          }
+        });
+    }
+ 
+ }
