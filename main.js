@@ -28,7 +28,7 @@ lancer.addEventListener('click', function() {
     }
     giveClasses(dices, posX, posY); /* On attribue les classes en fonction des positions */
     addNumber(dices);
-    shorting(dices);
+    shorting(dices, rank);
 });
 
 /* Vérifier si la position n'est pas déjà prise */
@@ -61,7 +61,7 @@ function addNumber(dices){
 }
 /* Au clic sur les dés ça affecte les classes h0, h1, h2, h3, h4 */
 
-function shorting(dices) {
+function shorting(dices, rank) {
     for (var j=0; j<5; j++){
         dices[j].addEventListener('click', function(){
             this.style.transform = 'rotate(0)';
