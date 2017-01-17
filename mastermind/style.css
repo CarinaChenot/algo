@@ -1,17 +1,35 @@
-table{
-    background-color: #e2e2e2;
+.gameplay{
     border-collapse: collapse;
-    width: 15px;
+    width: 16px;
     margin: 0 auto;
 }
 
-td{
+.pawns-place{
     border: 1px solid black;
-    padding: 15px;
+    padding: 16px;
     text-align: center;
 }
 
 .clue{
-    border: 0;
-    width: 5px;
+    background-color: #e2e2e2;
+    border-collapse: collapse;
+    margin-left: 20px;
+}
+
+.clue-place{
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+}
+
+.solution{
+    width: 100%;
+    height: 30px;
+}
+
+.solution1 .solution2 .solution3 .solution4{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #e2e2e2;
 }
