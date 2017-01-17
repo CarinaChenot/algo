@@ -1,0 +1,57 @@
+body {
+    font-family: Helvetica, sans-serif;
+}
+.colors, .table {
+    display: inline-block;
+}
+.colors div {
+    margin-top: 10px;
+    margin-right: 30px;
+}
+
+td {
+    height: 40px;
+    width: 40px;
+}
+
+.table tr td:last-child{
+    width: 260px;
+    padding-left: 20px;
+}
+
+.piece {
+    height: 30px;
+    width: 30px;
+    border-radius: 100%;
+    border: solid 2px black;
+    cursor: pointer;
+}
+
+.button:first-of-type {
+    display: block;
+}
+
+.rouge {
+    background-color: red;
+}
+.jaune {
+    background-color: yellow;
+}
+.vert {
+    background-color: green;
+}
+.bleu {
+    background-color: blue;
+}
+.orange {
+    background-color: orange;
+}
+.blanc {
+    background-color: white;
+}
+.violet {
+    background-color: darkviolet;
+}
+.fuchsia {
+    background-color: fuchsia;
+}
