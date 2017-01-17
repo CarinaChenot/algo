@@ -1,9 +1,11 @@
 body {
     font-family: Helvetica, sans-serif;
 }
+
 .colors, .table {
     display: inline-block;
 }
+
 .colors div {
     margin-top: 10px;
     margin-right: 30px;
@@ -14,7 +16,7 @@ td {
     width: 40px;
 }
 
-.table tr td:last-child{
+.table tr td:last-child {
     width: 260px;
     padding-left: 20px;
 }
@@ -34,24 +36,31 @@ td {
 .rouge {
     background-color: red;
 }
+
 .jaune {
     background-color: yellow;
 }
+
 .vert {
     background-color: green;
 }
+
 .bleu {
     background-color: blue;
 }
+
 .orange {
     background-color: orange;
 }
+
 .blanc {
     background-color: white;
 }
+
 .violet {
     background-color: darkviolet;
 }
+
 .fuchsia {
     background-color: fuchsia;
 }
