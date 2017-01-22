@@ -43,7 +43,7 @@ function verification(model, aleaColor) {
 /* Choisir couleur et la placer */
 for (var i = 0; i < select.length; i++) {
     select[i].addEventListener('click', function() {
-        if (col > 4 || trial > 11) { // si on est au 4ème td...
+        if (col > 4 || trial < 0) { // si on est au 4ème td...
             return; // ...on annule la fonction = on ajoute pas de pion
         }
         /* sinon on en ajoute un en ajoutant la classe du pion qu'on a cliqué dessus
