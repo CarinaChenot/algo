@@ -2,6 +2,7 @@
 var colors = ['piece rouge', 'piece jaune', 'piece vert', 'piece bleu', 'piece orange', 'piece blanc', 'piece violet', 'piece fuchsia'];
 var trial = 11;
 var col = 1;
+var onlyOne = [];
 var model = setModel(colors);
 console.log(model);
 
@@ -42,11 +43,15 @@ function verification(model, aleaColor) {
 /* Choisir couleur et la placer */
 for (var i = 0; i < select.length; i++) {
     select[i].addEventListener('click', function() {
-        if (col > 4) { // si on est au 4ème td...
+        if (col > 4 || trial > 11) { // si on est au 4ème td...
             return; // ...on annule la fonction = on ajoute pas de pion
         }
         /* sinon on en ajoute un en ajoutant la classe du pion qu'on a cliqué dessus
         pion rouge cliqué -> classe "rouge" ajoutée */
+        for (var j = 0; j < onlyOne.length; j++) {
+          if (onlyOne[j] == this.className) return;
+        }
+        onlyOne.push(this.className);
         rows[trial].children[col].className = this.className;
         col++; // on passe au prochain td
     });
@@ -76,8 +81,12 @@ check.addEventListener('click', function() {
     rows[trial].children[5].innerHTML = 'Bonne couleur : ' + rightColor + '<br/>Bonne place et bonne couleur : ' + rightPlace;
     col = 1; // reset le numéro de colonne
     trial--; // enlever 1 essai (on remonte d'un tr)
+    onlyOne = [];
     if (rightPlace === 4) { // si le nb de pions bien placés est de 4 affiche message gagné
         document.querySelector('.win').innerHTML = '<h1>Vous avez trouvé la combinaison secrète !</h1>';
+    }
+    if (rightPlace != 4 && trial < 0) { // si le nb de pions bien placés est de 4 affiche message gagné
+        document.querySelector('.win').innerHTML = '<h1>Vous n\'avez pas trouvé la combinaison secrète !</h1>';
     }
 });
 
@@ -87,6 +96,7 @@ suppr.addEventListener('click', function() {
         rows[trial].children[j].classList = "";
     } // on boucle sur les enfants du tr (donc les td) pour leur enlever les classes
     col = 1;
+    onlyOne = [];
 });
 
 /* Recommencer une nouvelle partie */
